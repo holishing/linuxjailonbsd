@@ -27,11 +27,11 @@
 
 * 檔案系統選擇：
     * UFS -> 建立一般的 jail
-    * ZFS -> 建立一般 jail 或搭配其他管理工具，如：iocage...等
+    * ZFS -> 建立一般 jail 或搭配其他管理工具，如：`iocage`...等
 
 * 選定 jail 所在 root 目錄
 * `pkg install debootstrap`
-* `debootstrap --foreign --arch=amd64 stretch /zroot/iocage/jail/debian9  http://free.nchc.org.tw/debian/` (自行改成你喜歡的 Debian 鏡像站)
+* `debootstrap --foreign --arch=amd64 stretch /zroot/iocage/jail/debian9  http://free.nchc.org.tw/debian/` (自行改成你喜歡的 Debian 鏡像站，可以加上 `--include="sysv-rc locales locales-all"` 等套件)
 * 建立預計掛載的 dev, proc, sys 目錄，掛上去
 * chroot 進去 debian root，利用 dpkg 把設定跑完
 * 設定 jail 後，把 Debian jail 打開
